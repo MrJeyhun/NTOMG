@@ -1,0 +1,17 @@
+{
+  "name": "ntomg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "random-key": "^0.3.2",
+    "table": "^6.8.1"
+  }
+}
