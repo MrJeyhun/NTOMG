@@ -6,22 +6,22 @@ const help = require("./help.js");
 class App {
   menu(args) {
     let count = 0;
-    let hashTable = {};
+    let menuTable = {};
 
     args.forEach((element) => {
       console.log(`${++count} - ${element}`);
-      hashTable[count] = element;
+      menuTable[count] = element;
     });
     console.log(`0 - exit`);
     console.log(`? - help`);
-    hashTable[0] = "exit";
-    hashTable["?"] = "help";
+    menuTable[0] = "exit";
+    menuTable["?"] = "help";
 
     let answer = this.ask().toString();
-    if (!(answer in hashTable)) {
+    if (!(answer in menuTable)) {
       return 1;
     }
-    return { answer, hashTable };
+    return { answer, menuTable };
   }
 
   launch() {
@@ -80,11 +80,11 @@ class App {
       popMenuObj = this.popMenu(args);
     }
 
-    console.log(`Your move: ${popMenuObj.hashTable[popMenuObj.answer]}`);
+    console.log(`Your move: ${popMenuObj.menuTable[popMenuObj.answer]}`);
     console.log(`Computer move: ${pcMove}`);
 
     rule.victoryLog(
-      rule.victory(popMenuObj.hashTable[popMenuObj.answer], pcMove)
+      rule.victory(popMenuObj.menuTable[popMenuObj.answer], pcMove)
     );
     console.log(`HMAC key: ${hmacKey.key}`);
   }
@@ -100,7 +100,7 @@ class App {
 
   popMenu(args) {
     let popMenuObj = this.menu(args);
-    while (!popMenuObj.hashTable?.hasOwnProperty(popMenuObj.answer)) {
+    while (!popMenuObj.menuTable?.hasOwnProperty(popMenuObj.answer)) {
       console.log("Wrong move, choose the one from the table!");
       popMenuObj = this.menu(args);
     }
