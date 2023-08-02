@@ -89,10 +89,6 @@ class App {
     console.log(`HMAC key: ${hmacKey.key}`);
   }
 
-  start() {
-    this.launch();
-  }
-
   ask() {
     let answer = prompt("Choose your move: ");
     return answer;
@@ -110,4 +106,4 @@ class App {
 }
 
 const app = new App();
-app.start();
+app.launch();
