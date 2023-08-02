@@ -24,7 +24,7 @@ class Rules {
     }
 
     winning.shift();
-
+    // TODO: string values will be changed to constants
     if (userInput == pcMove) {
       return "d";
     } else if (winning.includes(pcMove)) {
