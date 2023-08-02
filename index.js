@@ -25,9 +25,7 @@ class App {
   }
 
   launch() {
-    const args = process.argv;
-    args.shift();
-    args.shift();
+    const args = process.argv.slice(2);
 
     if (!args.length) {
       console.log("The options are missing. Try again with parameters");
