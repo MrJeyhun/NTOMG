@@ -68,8 +68,8 @@ class App {
     let rule = new rules(args);
 
     const pcMove = rule.pcMove(args);
-    const hmacFinal = hmacKey.generateHmac(pcMove);
-    console.log(`HMAC: ${hmacFinal}`);
+    const pcHmac = hmacKey.generateHmac(pcMove);
+    console.log(`HMAC: ${pcHmac}`);
 
     let popMenuObj = this.popMenu(args);
     if (popMenuObj.answer == "0") {
