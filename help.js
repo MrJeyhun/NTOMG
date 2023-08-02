@@ -7,12 +7,12 @@ class Help {
   }
 
   printHelp() {
-    console.log("Help table for this round: ");
+    console.log("Here rules of the game: ");
     const rule = new rules(this.args);
 
     let counter = 0;
     let currentTable = [];
-    let resultTable = [["VS", ...this.args]];
+    let resultTable = [["↓ PC / User →", ...this.args]];
     let victoryTable = rule.victoryLogTable(this.args);
 
     for (let i = 0; i < victoryTable.length; i++) {
